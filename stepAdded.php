@@ -12,7 +12,8 @@
         border-collapse: collapse;
         margin: 5px;
     }
-    td{
+    td
+    {
         border-style: solid;
         border-collapse: collapse;
         border-width: 1px;
@@ -22,9 +23,13 @@
 <body>
     <?php
     require_once("Model/model.php");
-    include_once("View/allTravel.php");
-    ?>
-    <a href="addNewTravel.php"><button>Ajouter un nouveau voyage</button></a> 
+
+    $departure_date = date_create($_POST['departuredate'].$_POST['departuretime']);
+    $arrival_date = date_create($_POST['arrivaldate'].$_POST['arrivaltime']);
+
+    var_dump($departure_date);
+    var_dump($arrival_date);
+    ?>  
 
 </body>
 </html>

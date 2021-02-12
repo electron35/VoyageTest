@@ -12,7 +12,8 @@
         border-collapse: collapse;
         margin: 5px;
     }
-    td{
+    td
+    {
         border-style: solid;
         border-collapse: collapse;
         border-width: 1px;
@@ -22,9 +23,16 @@
 <body>
     <?php
     require_once("Model/model.php");
-    include_once("View/allTravel.php");
-    ?>
-    <a href="addNewTravel.php"><button>Ajouter un nouveau voyage</button></a> 
+    ?>  
+    <form action="TravelAdded.php" method="post">
+        <p> Bienvenue sur le formulaire pour rajouter un voyage, veuillez d'abbord entrez votre nom </p>
+        <table>
+            <tr>
+                <td>Votre nom: </td><td> <input type="text" name="username" value=""></td>
+            </tr>
+            <tr><td><input type="submit"></td></tr>
+        </table>
+      </form>
 
 </body>
 </html>

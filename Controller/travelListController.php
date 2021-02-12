@@ -1,19 +1,18 @@
 <?php
     require_once("Model/model.php");
-
     
-    function get_all_travel_and_step(){
-        $db = get_db();
-        $query = get_all_travel($db);
-        $all_travel=array();
+    function getAllTravelAndStep(){
+        $db = getDB();
+        $query = getAllTravel($db);
+        $allTravel=array();
         
         while($new = $query->fetch(PDO::FETCH_ASSOC))
         {
-            $travel_tab["travel"] = $new['idTravel'];
-            $step_query = get_step_with_travel_id($db,$new['idTravel']);
-            $travel_tab["step"] = array();
+            $travelTab["travel"] = $new['idTravel'];
+            $stepQuery = get_step_with_travel_id($db,$new['idTravel']);
+            $travelTab["step"] = array();
             $array;
-            while($step_new = $step_query->fetch(PDO::FETCH_ASSOC))
+            while($step_new = $stepQuery->fetch(PDO::FETCH_ASSOC))
             {
                 //$array["id"] = $step_new['idEtape'];
                 $array["type"] = $step_new['type'];
@@ -26,17 +25,17 @@
                 $array["seat"] = $step_new['seat'];
                 $array["baggage_drop"] = $step_new['baggage_drop'];
 
-                array_push($travel_tab["step"], $array);
+                array_push($travelTab["step"], $array);
             }
             var_dump($array);
-            $step_query->closeCursor();
+            $stepQuery->closeCursor();
             
 
-            array_push($all_travel, $travel_tab);
+            array_push($allTravel, $travelTab);
         }
         $query->closeCursor();
 
-        return $all_travel;
+        return $allTravel;
     }
     
 ?>

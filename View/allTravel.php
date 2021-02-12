@@ -1,6 +1,6 @@
 <?php
-    require_once("Controller/controller.php");
-    $tab = get_all_travel_and_step();
+    require_once("Controller/travelListController.php");
+    $tab = getAllTravelAndStep();
     
     for ($i=0; $i < count($tab); $i++) {
         echo "<table>";
@@ -8,8 +8,8 @@
             if (is_array($value)){
                 for($j=0; $j < count($value); $j++){
                     echo "<td colspan=2> étape ".($j+1)." </td>";
-                    foreach ($value[$j] as $stepkey => $stepvalue) {
-                        echo "<tr><td>".$stepkey."</td> <td>".($stepvalue==null ? 'aucun' : $stepvalue)."</td></tr>";
+                    foreach ($value[$j] as $stepKey => $stepValue) {
+                        echo "<tr><td>".$stepKey."</td> <td>".($stepValue==null ? 'aucun' : $stepValue)."</td></tr>";
                     }
                 }
             }else{
