@@ -37,10 +37,10 @@ function get_step_with_travel_id($db,$voyage){
 //Add to db function
 function addTravel($db,$username)
 {
-    $query= $db->query("INSERT INTO `travel` (idTravel,username) VALUES (NULL, '$username'");
+    $query= $db->query("INSERT INTO `travel` (idTravel,creator) VALUES (NULL, '$creator'");
 }
 function addStep($db,$idTravel,$idEtape,$type,$departure_date,$arrival_date,$departure,$arrival,$seat,$gate,$baggage_drop)
 {
-    
+    $query= $db->query(INSERT INTO `etape` (`idEtape`, `type`, `transport_number`, `departure_date`, `arrival_date`, `departure`, `arrival`, `seat`, `gate`, `baggage_drop`, `idTravel`) VALUES (NULL, '', '', CURRENT_TIMESTAMP, '0000-00-00 00:00:00.000000', NULL, NULL, NULL, NULL, NULL, '') );
 }
 ?>
