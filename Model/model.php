@@ -19,15 +19,16 @@ function get_db(){
 
 function get_all_travel($db){
     $query = $db->query("SELECT * FROM `travel`");
+    return $query;
 }
 
 function get_travel_from_id($db,$voyage){
     $query = $db->query("SELECT * FROM `travel` WHERE idTravel=".$voyage);
+    return $query;
 }
 
 function get_step_with_travel_id($db,$voyage){
     $query = $db->query("SELECT * FROM `etape` WHERE idTravel=".$voyage);
-
     return $query;
 }
 ?>
