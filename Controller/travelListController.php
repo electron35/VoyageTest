@@ -1,7 +1,7 @@
 <?php
     require_once("Model/voyage.php");
     
-    function getAllTravelAndStep(){
+    function getAllTravelAndStep(){//turn the query from voyage into an associative array
         $db = getDB();
         $query = getAllTravel($db);
         $allTravel=array();
@@ -14,7 +14,6 @@
             $array;
             while($step_new = $stepQuery->fetch(PDO::FETCH_ASSOC))
             {
-                //$array["id"] = $step_new['idEtape'];
                 $array["type"] = $step_new['type'];
                 $array["transport_number"] = $step_new['transport_number'];
                 $array["departure_date"] = $step_new['departure_date'];
@@ -27,7 +26,6 @@
 
                 array_push($travelTab["step"], $array);
             }
-            var_dump($array);
             $stepQuery->closeCursor();
             
 

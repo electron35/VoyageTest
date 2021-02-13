@@ -1,5 +1,5 @@
 <?php
-//DB and PhpMyAdmin information
+//DB and PhpMyAdmin information | Modify if needed
 define("MYHOST","localhost");
 define("MYDB","voyage");
 define("MYUSER","root");
@@ -42,8 +42,8 @@ function addTravel($db,$creator)
 function addStep($db,$idTravel,$type,$transportNumber,$departure_date,$arrival_date,$departure = NULL,$arrival = NULL,$seat = NULL,$gate = NULL,$baggage_drop = NULL)
 {
     try {
-        var_dump("INSERT INTO `etape` (`idEtape`, `type`, `transport_number`, `departure_date`, `arrival_date`, `departure`, `arrival`, `seat`, `gate`, `baggage_drop`, `idTravel`) VALUES (NULL, '$type', '$transportNumber', '$departure_date', '$arrival_date', '$departure', $arrival, $seat, $gate, $baggage_drop, '$idTravel')");
         $query= $db->query("INSERT INTO `etape` (`idEtape`, `type`, `transport_number`, `departure_date`, `arrival_date`, `departure`, `arrival`, `seat`, `gate`, `baggage_drop`, `idTravel`) VALUES (NULL, '$type', '$transportNumber', '$departure_date', '$arrival_date', '$departure', '$arrival', '$seat', '$gate', '$baggage_drop', $idTravel)");
+        echo "requete envoyé";
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
