@@ -35,12 +35,17 @@ function get_step_with_travel_id($db,$voyage){
 }
 
 //Add to db function
-function addTravel($db,$username)
+function addTravel($db,$creator)
 {
-    $query= $db->query("INSERT INTO `travel` (idTravel,creator) VALUES (NULL, '$creator'");
+    $query= $db->query("INSERT INTO `travel` (idTravel,creator) VALUES (NULL, '$creator')");
 }
-function addStep($db,$idTravel,$idEtape,$type,$departure_date,$arrival_date,$departure,$arrival,$seat,$gate,$baggage_drop)
+function addStep($db,$idTravel,$type,$transportNumber,$departure_date,$arrival_date,$departure = NULL,$arrival = NULL,$seat = NULL,$gate = NULL,$baggage_drop = NULL)
 {
-    $query= $db->query(INSERT INTO `etape` (`idEtape`, `type`, `transport_number`, `departure_date`, `arrival_date`, `departure`, `arrival`, `seat`, `gate`, `baggage_drop`, `idTravel`) VALUES (NULL, '', '', CURRENT_TIMESTAMP, '0000-00-00 00:00:00.000000', NULL, NULL, NULL, NULL, NULL, '') );
-}
+    try {
+        var_dump("INSERT INTO `etape` (`idEtape`, `type`, `transport_number`, `departure_date`, `arrival_date`, `departure`, `arrival`, `seat`, `gate`, `baggage_drop`, `idTravel`) VALUES (NULL, '$type', '$transportNumber', '$departure_date', '$arrival_date', '$departure', $arrival, $seat, $gate, $baggage_drop, '$idTravel')");
+        $query= $db->query("INSERT INTO `etape` (`idEtape`, `type`, `transport_number`, `departure_date`, `arrival_date`, `departure`, `arrival`, `seat`, `gate`, `baggage_drop`, `idTravel`) VALUES (NULL, '$type', '$transportNumber', '$departure_date', '$arrival_date', '$departure', '$arrival', '$seat', '$gate', '$baggage_drop', $idTravel)");
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+    }
 ?>

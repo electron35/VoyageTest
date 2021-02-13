@@ -22,10 +22,11 @@
 <body>
     <?php
     require_once("Model/model.php");
-    include_once("View/allTravel.php");
-
-    if ((strlen($_POST["username"])<20 && (strlen($_POST["username"])>0){
-        addTravel($_POST["username"]);
+    
+    if ((strlen($_POST["username"])<20) && (strlen($_POST["username"])>0))
+    {
+        $db = getDB();
+        addTravel($db, $_POST["username"]);
         echo "<p>Vous venez d'ajouter un voyage, <a href=\"addNewStep.php\">appuyez ici pour rajouter des étapes</a></p>";
     }else{
         echo "<p>Nom invalide (peut être trop long?), <a href=\"addNewStep.php\">appuyez ici pour retourner à l'étape précedentes</a></p>";

@@ -24,7 +24,8 @@
     require_once("Model/model.php");
     include_once("View/allTravel.php");
     ?>
-    <a href="addNewTravel.php"><button>Ajouter un nouveau voyage</button></a> 
+    <a href="addNewTravel.php"><button>Ajouter un nouveau voyage</button></a>
+    <a href="addNewStep.php"><button>Ajouter une étape à un voyage</button></a> 
 
 </body>
 </html>
