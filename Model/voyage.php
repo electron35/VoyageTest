@@ -24,12 +24,12 @@ function getAllTravel($db){
     return $query;
 }
 
-function get_travel_from_id($db,$voyage){
+function getTravelFromId($db,$voyage){
     $query = $db->query("SELECT * FROM `travel` WHERE idTravel=".$voyage);
     return $query;
 }
 
-function get_step_with_travel_id($db,$voyage){
+function getStepWithTravelId($db,$voyage){
     $query = $db->query("SELECT * FROM `etape` WHERE idTravel=".$voyage);
     return $query;
 }

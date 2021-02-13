@@ -9,7 +9,7 @@
         while($new = $query->fetch(PDO::FETCH_ASSOC))
         {
             $travelTab["travel"] = $new['idTravel'];
-            $stepQuery = get_step_with_travel_id($db,$new['idTravel']);
+            $stepQuery = getStepWithTravelId($db,$new['idTravel']);
             $travelTab["step"] = array();
             $array;
             while($step_new = $stepQuery->fetch(PDO::FETCH_ASSOC))
