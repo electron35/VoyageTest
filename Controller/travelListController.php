@@ -1,5 +1,5 @@
 <?php
-    require_once("Model/model.php");
+    require_once("Model/voyage.php");
     
     function getAllTravelAndStep(){
         $db = getDB();

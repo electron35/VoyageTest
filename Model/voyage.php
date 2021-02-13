@@ -47,5 +47,5 @@ function addStep($db,$idTravel,$type,$transportNumber,$departure_date,$arrival_d
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
-    }
+}
 ?>

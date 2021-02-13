@@ -5,23 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voyage Voyage</title>
-    <style>
-    table
-    {
-        border-style: solid;
-        border-collapse: collapse;
-        margin: 5px;
-    }
-    td{
-        border-style: solid;
-        border-collapse: collapse;
-        border-width: 1px;
-    }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <?php
-    require_once("Model/model.php");
+    require_once("Model/voyage.php");
     include_once("View/allTravel.php");
     ?>
     <a href="addNewTravel.php"><button>Ajouter un nouveau voyage</button></a>

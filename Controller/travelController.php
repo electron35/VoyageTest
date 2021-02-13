@@ -1,7 +1,7 @@
 <?php
     function getTravels()
     {
-        require_once("Model/model.php");
+        require_once("Model/voyage.php");
         $db = getDB();
         $query = getAllTravel($db);
         $travel = array();
@@ -9,6 +9,5 @@
             array_push($travel, array('idTravel' => $new['idTravel'] , 'creator' => $new['creator']));
         }
         return $travel;
-
     }
 ?>
