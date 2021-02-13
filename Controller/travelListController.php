@@ -34,6 +34,5 @@
         $query->closeCursor();
 
         return $allTravel;
-    }
-    
+    } 
 ?>

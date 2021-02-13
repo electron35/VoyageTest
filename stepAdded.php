@@ -15,12 +15,9 @@
     {
         return ((strlen($varToTest)>0) && (strlen($varToTest)<$intendedSize)) ? $varToTest : NULL;
     }
-
     
     $departure_date = date_format(date_create($_POST['departuredate'].$_POST['departuretime']),"Y/m/d H:i:s");
-
     $arrival_date = date_format(date_create($_POST['arrivaldate'].$_POST['arrivaltime']),"Y/m/d H:i:s");
-    //($db,$idTravel,$type,$transportNumber,$departure_date,$arrival_date,$departure = NULL,$arrival = NULL,$seat = NULL,$gate = NULL,$baggage_drop = NULL)
 
     addStep(getDB(),$_POST['travel'],
                     $_POST['type'],
@@ -33,6 +30,5 @@
                     verify($_POST['baggage_drop'],5));
     ?>
     <a href="index.php"><button>retourner au menu principal</button></a>
-
 </body>
 </html>

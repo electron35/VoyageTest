@@ -17,7 +17,6 @@ function getDB(){
     return $db;
 }
 
-
 //Get from db function
 function getAllTravel($db){
     $query = $db->query("SELECT * FROM `travel`");

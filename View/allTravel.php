@@ -15,10 +15,7 @@
             }else{
                 echo "<tr> <th colspan=2>Voyage n°".$value."</th></tr>";
             }
-
         }
         echo "</table>";
     }
-    
-    
 ?>

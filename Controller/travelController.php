@@ -1,5 +1,5 @@
 <?php
-        require_once("Model/voyage.php");
+    require_once("Model/voyage.php");
     function getTravels()//turn the query from voyage into an associative array
     {
         $db = getDB();

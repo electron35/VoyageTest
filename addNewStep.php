@@ -23,7 +23,6 @@
                     <option value="plane">Train</option>
                     <option value="plane">Bus</option>
                     <option value="plane">Boat</option>
-                
                 </select>
                 </td>
             </tr>
@@ -54,6 +53,5 @@
             <tr><td><input type="submit" value="ajouter une étape"></td></tr>
         </table>
       </form>
-
 </body>
 </html>

@@ -8,4 +8,3 @@ define("MYHOST","localhost");
 define("MYDB","voyage");
 define("MYUSER","root");
 define("MYPASS","");
-
