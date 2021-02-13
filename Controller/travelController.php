@@ -1,7 +1,8 @@
 <?php
+        require_once("Model/voyage.php");
     function getTravels()
     {
-        require_once("Model/voyage.php");
+        
         $db = getDB();
         $query = getAllTravel($db);
         $travel = array();
